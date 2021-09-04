@@ -1,0 +1,20 @@
+Func _proxy_settings()
+    ;
+    _read_ini()
+    GUISetState(@SW_SHOW, $Proxy_Form)
+    ;
+EndFunc
+
+Func _close_proxy_settings()
+    ;
+    GUISetState(@SW_HIDE, $Proxy_Form)
+
+    ;
+EndFunc
+
+Func _read_ini()
+    ;
+    _GUICtrlEdit_SetText($PF_Port, IniRead($ini, "PROXY", "PROXYPORT", ""))
+    _GUICtrlEdit_SetText($PF_IP, IniRead($ini, "PROXY", "PROXYIP", ""))
+    _GUICtrlEdit_SetText($PF_Login, IniRead($ini, "PROXY", "PROXYUSER", ""))
+    _GUICtrlEdit_SetText($PF_Pass, IniRead($ini, "PROXY", "PROXYPASS", 
